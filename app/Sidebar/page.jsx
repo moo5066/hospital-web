@@ -24,7 +24,7 @@ function handleLogin(){
 
 const [active, setActive] = useState("")
 
-
+const [open, setOpen] = useState(false)
 
 
 const list=[
@@ -83,7 +83,7 @@ const list=[
         <div className='w-[60%] md:w-[40%] lg:w-[20%]  min-h-screen border border-r border-gray-300 pt-15 px-5'> 
 
 <div>
-    <span className='right-53 fixed absolute bg-gray-300 p-2 rounded-lg'><IoIosMenu size={30}/></span>
+    <span className='right-[83%] fixed absolute bg-gray-300 p-2 rounded-lg'><IoIosMenu size={30}/></span>
 </div>
 
 
