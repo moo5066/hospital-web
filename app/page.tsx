@@ -21,6 +21,21 @@ const page = () => {
 
 const [darkMode, setDarkMode] =useState(false);
 
+function handleLearnMore(){
+  alert("coming soon")
+}
+
+function handleLogin(){
+  alert("Also Coming Soon")
+}
+
+function handleMo(){
+  alert ("Dashboard will be available soon")
+}
+
+function handlefunction(){
+  setDarkMode(!darkMode)
+}
 
 
 
@@ -30,7 +45,7 @@ const [darkMode, setDarkMode] =useState(false);
        <div className={`min-h-screen   p-10 transition-colors duration-300 ${darkMode ? ' bg-black text-white' : "bg-gray-100 text-gray-900"}`}>
 
   <div>
-        <button onClick={()=>setDarkMode(!darkMode)} className={`fixed top-0 right-0 px-3 py-2 m-5 bg-gray-200 rounded-lg shadow-md cursor-pointer ${darkMode ? "bg-gray-900" : "bg-gray-300"}`}>
+        <button onClick={handlefunction} className={`fixed top-0 right-0 px-3 py-2 m-5 bg-gray-200 rounded-lg shadow-md cursor-pointer ${darkMode ? "bg-gray-900" : "bg-gray-300"}`}>
         {darkMode ? <IoMdSunny size={20} className="text-white"/> : <IoMdSunny size={20} className="text-gray-900"/>}
         </button> 
       </div>
@@ -46,13 +61,13 @@ const [darkMode, setDarkMode] =useState(false);
       <div className='flex flex-row items-center  gap-2'>
       <Image src='/midical care Background Removed.png' alt='logo' width={100} height={100} />
       <div>
-        <h1 className='font-bold text-xl'>MediCare Hospital</h1>
-        <p className='text-gray-500'>Advanced Healthcare Management</p>
+        <h1 className='font-bold lg:text-xl'>MediCare Hospital</h1>
+        <p className='text-gray-500 text-sm lg:text-lg'>Advanced Healthcare Management</p>
       </div>
     </div>
 
 <button>
-  <span className='bg-blue-600 px-7 py-3 rounded-lg text-center text-white duration-150 transition-transform hover:scale-105 shadow-lg  text-xl'>Login</span>
+  <span onClick={handleLogin} className='bg-blue-600 px-7 py-3 rounded-lg text-center text-white duration-150 transition-transform hover:scale-105 shadow-lg  text-xl'>Login</span>
 </button>
 </div>
 
@@ -64,14 +79,14 @@ const [darkMode, setDarkMode] =useState(false);
   </div>
 
 <div className='flex gap-5 items-center'>
-  <div className='bg-blue-600 couser-pointer  text-white p-5 lg:p-3 lg:text-lg text-xl font-bold flex items-center gap-2 w-max rounded-lg shadow-md duration-150 transition-transform hover:scale-105'>
-  <Link href='/'>Access Dashboard</Link><span><HiOutlineArrowRight/></span></div>
-  <Link href='/' className='couser-pointer border border-blue-600 text-blue-600 p-5 lg:p-3 lg:text-lg text-xlfont-bold rounded-lg shadow-md duration-150 transition-transform hover:scale-105'>Learn More</Link>
+  <div className='bg-blue-600 couser-pointer  text-white lg:p-5  p-2 md:p-3 md:text-lg lg:text-xl font-bold flex items-center gap-2 w-max rounded-lg shadow-md duration-150 transition-transform hover:scale-105'>
+  <Link onClick={handleMo} href='/'>Access Dashboard</Link><span><HiOutlineArrowRight/></span></div>
+  <Link onClick={handleLearnMore} href='/' className='couser-pointer border border-blue-600 text-blue-600 p-2 lg:p-5 lg:p-3 lg:text-lg lg:text-xl font-bold rounded-lg shadow-md duration-150 transition-transform hover:scale-105'>Learn More</Link>
 
 </div>
 </div>
 
-<div className={`mt-10 p-10 p-5 lg:w-[50%] rounded-lg shadow-lg ${darkMode ? 'bg-black   border border-gray-900 shadow-lg' : "bg-white"}`}>
+<div className={`mt-10 p-10  lg:w-[50%] rounded-lg shadow-lg ${darkMode ? 'bg-black   border border-gray-900 shadow-lg' : "bg-white"}`}>
   <div className={`flex justify-between items-center p-3 rounded-lg ${darkMode ? 'bg-gray-900    border border-gray-900 shadow-lg' : "bg-gray-200"} `}>
   <div className='flex flex-col '>
     <p className='text-md text-gray-600'>Total patients</p>
@@ -108,25 +123,25 @@ const [darkMode, setDarkMode] =useState(false);
 <div className={`grid grid-cols-2 lg:grid-cols-4 gap-10 p-10 mt-10 `}>
   <div className={` p-5 rounded-lg  flex flex-col gap-3 hover:shadow-lg ${darkMode ? 'bg-black   border border-gray-900 shadow-lg' : "bg-white"}`}>
     <span className='bg-blue-100 w-[12%] p-2 rounded-lg '><MdPeople size={20} color='blue'/></span>
-    <h1 className='text-lg font-semibold'>Patient Management</h1>
+    <h1 className='lg:text-lg font-semibold'>Patient Management</h1>
     <p className='text-gray-600'>Comprehensive patient records and history.</p>
   </div>
 
   <div className={` p-5 rounded-lg hover:shadow-lg flex flex-col gap-5 ${darkMode ? 'bg-black   border border-gray-900 shadow-lg' : "bg-white"}`}>
     <span className='bg-blue-200 w-[12%] p-2 rounded-lg '><SlCalender size={20} color='blue'/></span>
-    <h1 className='text-lg font-semibold'>Smart Scheduling</h1>
+    <h1 className='lg:text-lg font-semibold'>Smart Scheduling</h1>
     <p className='text-gray-600'>Seamless multi-department collaboration.</p>
   </div>
 
   <div className={` p-5 rounded-lg hover:shadow-lg flex flex-col gap-5 ${darkMode ? 'bg-black   border border-gray-900 shadow-lg' : "bg-white"}`}>
     <span className='bg-blue-200 w-[12%] p-2 rounded-lg '><FcDepartment size={20} color='blue'/></span>
-    <h1 className='text-xl font-bold'>Department Coordination</h1>
+    <h1 className='lg:text-xl font-bold'>Department Coordination</h1>
     <p className='text-gray-600'>Efficient management of hospital departments.</p>
   </div>
 
   <div className={` p-5 rounded-lg hover:shadow-lg flex flex-col gap-5 ${darkMode ? 'bg-black   border border-gray-900 shadow-lg' : "bg-white"}`}>
     <span className='bg-blue-200 w-[12%] p-2 rounded-lg '><BsGraphDownArrow size={20} color='blue'/></span>
-    <h1 className='text-xl font-bold'>PEmergency Care</h1>
+    <h1 className='lg:text-xl font-bold'>PEmergency Care</h1>
     <p className='text-gray-600'>24/7 critical care monitoring.</p>
   </div>
 
@@ -135,7 +150,7 @@ const [darkMode, setDarkMode] =useState(false);
 
 <div className={`m-20 p-7  flex flex-col gap-10 rounded-lg shadow-lg lg:flex-row lg:justify-around lg:items-center ${darkMode ? 'bg-black   border border-gray-900 shadow-lg' : "bg-white"}`}>
 <div>
-  <div>
+  <div className='overflow-scroll'>
     <h1 className='text-2xl font-bold'>Why Choose MediCare?</h1>
     <p className='w-100'>Our platform is designed by healthcare professionals for healthcare professionals. 
       We understand the unique challenges of hospital management and have built solutions that work.</p>
@@ -201,8 +216,8 @@ const [darkMode, setDarkMode] =useState(false);
 
 </div>
 
-<div className={` p-7 mt-10 rounded-lg  text-xl font-bold flex items-center justify-center gap-2 w-max mx-auto hover:shadow-lg duration-150 transition-transform hover:scale-105 ${darkMode ? 'bg-black text-white   border border-gray-900 shadow-lg' : "bg-white text-black"}`}>
-  <Link href='/' className={`couser-pointer `}>Access Dashboard</Link>
+<div className={` p-2 lg:p-7 mt-10 rounded-lg   lg:text-xl font-bold flex items-center justify-center gap-2 w-max mx-auto hover:shadow-lg duration-150 transition-transform hover:scale-105 ${darkMode ? 'bg-black text-white   border border-gray-900 shadow-lg' : "bg-white text-black"}`}>
+  <Link onClick={handleMo} href='/' className={`couser-pointer  `}>Access Dashboard</Link>
   <span className={`text-blue-600 ${darkMode ? 'bg-black text-white   border border-gray-900 shadow-lg' : "bg-white text-black"}`}><HiOutlineArrowRight size={20}/></span>
 </div>
 
