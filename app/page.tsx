@@ -25,9 +25,7 @@ function handleLearnMore(){
   alert("coming soon")
 }
 
-function handleLogin(){
-  alert("Also Coming Soon")
-}
+
 
 function handleMo(){
   alert ("Dashboard will be available soon")
@@ -67,7 +65,7 @@ function handlefunction(){
     </div>
 
 <button>
-  <span onClick={handleLogin} className='bg-blue-600 px-7 py-3 rounded-lg text-center text-white duration-150 transition-transform hover:scale-105 shadow-lg  text-xl'>Login</span>
+  <Link   href='/Login' className='bg-blue-600 px-7 py-3 rounded-lg text-center text-white duration-150 transition-transform hover:scale-105 shadow-lg  text-xl'>Login</Link>
 </button>
 </div>
 
@@ -81,7 +79,7 @@ function handlefunction(){
 <div className='flex gap-5 items-center'>
   <div className='bg-blue-600 couser-pointer  text-white lg:p-5  p-2 md:p-3 md:text-lg lg:text-xl font-bold flex items-center gap-2 w-max rounded-lg shadow-md duration-150 transition-transform hover:scale-105'>
   <Link onClick={handleMo} href='/'>Access Dashboard</Link><span><HiOutlineArrowRight/></span></div>
-  <Link onClick={handleLearnMore} href='/' className='couser-pointer border border-blue-600 text-blue-600 p-2 lg:p-5 lg:p-3 lg:text-lg lg:text-xl font-bold rounded-lg shadow-md duration-150 transition-transform hover:scale-105'>Learn More</Link>
+  <Link onClick={handleLearnMore} href='' className='couser-pointer border border-blue-600 text-blue-600 p-2 lg:p-5   lg:text-xl font-bold rounded-lg shadow-md duration-150 transition-transform hover:scale-105'>Learn More</Link>
 
 </div>
 </div>
