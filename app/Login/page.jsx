@@ -10,7 +10,7 @@ import { LuEyeClosed } from "react-icons/lu";
 const Login = () => {
   return (
     <div className='flex flex-col justify-center bg-white'>
-     <Link href='/page.tsx' className='flex text-gray-400 items-center gap-2 cursor-pointer mx-auto my-20'>
+     <Link href='/' className='flex text-gray-400 items-center gap-2 cursor-pointer mx-auto my-20 hover:text-gray-700'>
       <span><FaArrowLeft/></span>
       <p className='text-xl '>Back to Home</p>
      </Link>
