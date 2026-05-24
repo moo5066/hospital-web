@@ -16,8 +16,10 @@ import { CiLocationOn } from "react-icons/ci";
 import { MdDarkMode } from "react-icons/md";
 import { IoMdSunny } from "react-icons/io";
 import { useState } from 'react';
+import Header from './components/Header'
 
-const page = () => {
+
+const Page = () => {
 
 const [darkMode, setDarkMode] =useState(false);
 
@@ -39,12 +41,13 @@ function handlefunction(){
 
   return (
     <div>
+      <Header />
 
        <div className={`min-h-screen   p-10 transition-colors duration-300 ${darkMode ? ' bg-black text-white' : "bg-gray-100 text-gray-900"}`}>
 
   <div>
         <button onClick={handlefunction} className={`fixed top-0 right-0 px-3 py-2 m-5 bg-gray-200 rounded-lg shadow-md cursor-pointer ${darkMode ? "bg-gray-900" : "bg-gray-300"}`}>
-        {darkMode ? <IoMdSunny size={20} className="text-white"/> : <IoMdSunny size={20} className="text-gray-900"/>}
+        {darkMode ? <IoMdSunny size={20} className="text-white"/> : <MdDarkMode size={20} className="text-gray-900"/>}
         </button> 
       </div>
 
@@ -55,7 +58,7 @@ function handlefunction(){
 
 
    <div>
-    <div className='flex justify-between items-center p-5'>
+    {/* <div className='flex justify-between items-center p-5'>
       <div className='flex flex-row items-center  gap-2'>
       <Image src='/midical care Background Removed.png' alt='logo' width={100} height={100} />
       <div>
@@ -67,8 +70,7 @@ function handlefunction(){
 <button>
   <Link   href='/Login' className='bg-blue-600 px-7 py-3 rounded-lg text-center text-white duration-150 transition-transform hover:scale-105 shadow-lg  text-xl'>Login</Link>
 </button>
-</div>
-
+</div> */}
   <div className='m-7 flex flex-col gap-10 lg:flex-row lg:items-center justify-between'>
   <div className='flex flex-col gap-2 w-auto'>
   <div>
@@ -78,7 +80,7 @@ function handlefunction(){
 
 <div className='flex gap-5 items-center'>
   <div className='bg-blue-600 couser-pointer  text-white lg:p-5  p-2 md:p-3 md:text-lg lg:text-xl font-bold flex items-center gap-2 w-max rounded-lg shadow-md duration-150 transition-transform hover:scale-105'>
-  <Link onClick={handleMo} href='/'>Access Dashboard</Link><span><HiOutlineArrowRight/></span></div>
+  <Link  href='/login'>Get Started</Link><span><HiOutlineArrowRight/></span></div>
   <Link onClick={handleLearnMore} href='' className='couser-pointer border border-blue-600 text-blue-600 p-2 lg:p-5   lg:text-xl font-bold rounded-lg shadow-md duration-150 transition-transform hover:scale-105'>Learn More</Link>
 
 </div>
@@ -214,8 +216,8 @@ function handlefunction(){
 
 </div>
 
-<div className={` p-2 lg:p-7 mt-10 rounded-lg   lg:text-xl font-bold flex items-center justify-center gap-2 w-max mx-auto hover:shadow-lg duration-150 transition-transform hover:scale-105 ${darkMode ? 'bg-black text-white   border border-gray-900 shadow-lg' : "bg-white text-black"}`}>
-  <Link onClick={handleMo} href='/' className={`couser-pointer  `}>Access Dashboard</Link>
+<div className={` p-2 lg:p-7 mt-10 rounded-lg   md:text-lg lg:text-xl font-bold flex items-center justify-center gap-2 w-max mx-auto hover:shadow-lg duration-150 transition-transform hover:scale-105 ${darkMode ? 'bg-black text-white   border border-gray-900 shadow-lg' : "bg-white text-black"}`}>
+  <Link href='/login' className={`couser-pointer  `}>Get Started</Link>
   <span className={`text-blue-600 ${darkMode ? 'bg-black text-white   border border-gray-900 shadow-lg' : "bg-white text-black"}`}><HiOutlineArrowRight size={20}/></span>
 </div>
 
@@ -233,4 +235,4 @@ function handlefunction(){
   )
 }
 
-export default page
+export default Page
