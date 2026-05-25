@@ -1,14 +1,14 @@
 
 'use client'
 // import { Sidebar } from 'lucide'
-import React from 'react'
 
-import Image  from 'next/image'
+// import Image  from 'next/image'
 import Link from 'next/link'
 import { MdPeople } from "react-icons/md";
 import { SlCalender } from "react-icons/sl";
 import { BsGraphDownArrow } from "react-icons/bs";
-import { HiOutlineArrowRight } from "react-icons/hi";import { FcDepartment } from "react-icons/fc";
+import { HiOutlineArrowRight } from "react-icons/hi";
+import { FcDepartment } from "react-icons/fc";
 import { FiCheckCircle } from "react-icons/fi";
 import { IoCallOutline } from "react-icons/io5";
 import { MdOutlineEmail } from "react-icons/md";
@@ -29,9 +29,6 @@ function handleLearnMore(){
 
 
 
-function handleMo(){
-  alert ("Dashboard will be available soon")
-}
 
 function handlefunction(){
   setDarkMode(!darkMode)
@@ -79,9 +76,9 @@ function handlefunction(){
   </div>
 
 <div className='flex gap-5 items-center'>
-  <div className='bg-blue-600 couser-pointer  text-white lg:p-5  p-2 md:p-3 md:text-lg lg:text-xl font-bold flex items-center gap-2 w-max rounded-lg shadow-md duration-150 transition-transform hover:scale-105'>
+  <div className='bg-blue-600 cursor-pointer text-white lg:p-5  p-2 md:p-3 md:text-lg lg:text-xl font-bold flex items-center gap-2 w-max rounded-lg shadow-md duration-150 transition-transform hover:scale-105'>
   <Link  href='/login'>Get Started</Link><span><HiOutlineArrowRight/></span></div>
-  <Link onClick={handleLearnMore} href='' className='couser-pointer border border-blue-600 text-blue-600 p-2 lg:p-5   lg:text-xl font-bold rounded-lg shadow-md duration-150 transition-transform hover:scale-105'>Learn More</Link>
+  <Link onClick={handleLearnMore} href='' className='cursor-pointer border border-blue-600 text-blue-600 p-2 lg:p-5   lg:text-xl font-bold rounded-lg shadow-md duration-150 transition-transform hover:scale-105'>Learn More</Link>
 
 </div>
 </div>
@@ -141,7 +138,7 @@ function handlefunction(){
 
   <div className={` p-5 rounded-lg hover:shadow-lg flex flex-col gap-5 ${darkMode ? 'bg-black   border border-gray-900 shadow-lg' : "bg-white"}`}>
     <span className='bg-blue-200 w-[12%] p-2 rounded-lg '><BsGraphDownArrow size={20} color='blue'/></span>
-    <h1 className='lg:text-xl font-bold'>PEmergency Care</h1>
+    <h1 className='lg:text-xl font-bold'>Emergency Care</h1>
     <p className='text-gray-600'>24/7 critical care monitoring.</p>
   </div>
 
@@ -150,12 +147,12 @@ function handlefunction(){
 
 <div className={`m-20 p-7  flex flex-col gap-10 rounded-lg shadow-lg lg:flex-row lg:justify-around lg:items-center ${darkMode ? 'bg-black   border border-gray-900 shadow-lg' : "bg-white"}`}>
 <div>
-  <div className='overflow-scroll'>
+  <div>
     <h1 className='text-2xl font-bold'>Why Choose MediCare?</h1>
     <p className='w-100'>Our platform is designed by healthcare professionals for healthcare professionals. 
       We understand the unique challenges of hospital management and have built solutions that work.</p>
 <div className='flex items-center gap-2 mt-5 duration-150 transition-transform hover:scale-105 w-max'>
-      <Link href='/Dashboard' className='text-blue-600 text-lg font-semibold'>Get Started Now </Link>
+      <Link href='/login' className='text-blue-600 text-lg font-semibold'>Get Started Now </Link>
   <span className='text-blue-600'><HiOutlineArrowRight size={20}/></span>
 </div>
   </div>
@@ -217,7 +214,7 @@ function handlefunction(){
 </div>
 
 <div className={` p-2 lg:p-7 mt-10 rounded-lg   md:text-lg lg:text-xl font-bold flex items-center justify-center gap-2 w-max mx-auto hover:shadow-lg duration-150 transition-transform hover:scale-105 ${darkMode ? 'bg-black text-white   border border-gray-900 shadow-lg' : "bg-white text-black"}`}>
-  <Link href='/login' className={`couser-pointer  `}>Get Started</Link>
+  <Link href='/login' className={`cursor-pointer  `}>Get Started</Link>
   <span className={`text-blue-600 ${darkMode ? 'bg-black text-white   border border-gray-900 shadow-lg' : "bg-white text-black"}`}><HiOutlineArrowRight size={20}/></span>
 </div>
 

@@ -13,12 +13,22 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { IoMdMenu } from "react-icons/io";
 import { useState } from 'react';
+import { CiMenuBurger } from "react-icons/ci";
 
 
 
 const Sidebar = () => {
 
   const [isOpen,setIsOpen]=useState(false)
+
+
+
+function handleOpen() {
+
+    setIsOpen(!isOpen)
+}
+
+
 
 function handleLogin(){
   alert("Also Coming Soon")
@@ -33,12 +43,10 @@ const list=[
     {
         icon:<MdDashboard/>,
         name:"Dashboard",
-        // href='/'
     },
     {
         icon:<FaPeopleRoof/>,
         name:"Patients",
-        // href='/'
 
     },
     {
@@ -65,7 +73,35 @@ const list=[
   return (
 
    <div>
-<p>hi from sidebar</p>
+
+<div className='flex flex-col space-y-5'> 
+<div className='flex items-center gap-2 cursor-pointer' onClick={handleOpen}>
+  <CiMenuBurger size={25}/>
+  <span className='text-lg font-bold'>MediCare</span>
+</div>
+
+<div className='flex flex-col gap-5 mt-10'>
+    {
+        list.map((item,index)=>(
+            <div key={index} className={`flex items-center gap-3 text-md font-medium cursor-pointer ${active===item.name && "text-blue-600"}`} onClick={()=>setActive(item.name)}>
+                <span>{item.icon}</span>
+                <span>{item.name}</span>
+            </div>
+        ))
+    }
+</div>
+
+<div className='mt-auto'>
+    <button onClick={handleLogin} className='bg-blue-600 w-full p-3 text-white rounded-lg'>Login</button>
+</div>
+
+<div>
+
+</div>
+    
+</div>
+
+
    </div>
   )
 }

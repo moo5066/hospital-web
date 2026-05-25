@@ -9,8 +9,6 @@ import { MdOutlinePassword } from "react-icons/md";
 import { FiEye } from "react-icons/fi";
 import { LuEyeClosed } from "react-icons/lu";
 import { useState } from 'react';
-import Header from '../components/Header'
-
 const Login = () => {
 
 
@@ -31,7 +29,7 @@ const handleToglePassword =()=>{
       <span><FaArrowLeft/></span>
       <p className='text-xl '>Back to Home</p>
      </Link> */}
-<Header/>
+
 <div className='w-full mx-auto max-w-md min-h-200 bg-white  border border-gray-300 rounded-lg shadow-lg   mt-10 p-8'>
   <div>
 <Link href='/' className='flex flex-col gap-2 items-center'>
@@ -51,10 +49,10 @@ const handleToglePassword =()=>{
 
 </div>
 
-  <label htmlFor='email' className='text-md text-gray-700 font-bold'>Password</label>
+  <label htmlFor='password' className='text-md text-gray-700 font-bold'>Password</label>
   <div className='flex items-center gap-3 w-full border border-gray-300 rounded-lg p-3 mt-2 mb-5 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent'>
     <MdOutlinePassword size={20} className='text-gray-400'/>
-  <input type='password' id='password' placeholder='Enter your password' required className='w-full focus:outline-none'/>
+  <input type={showPassword ? "text" : "password"} id='password' placeholder='Enter your password' required className='w-full focus:outline-none'/>
 
 <button type='button' onClick={handleToglePassword} className='text-gray-400 focus:outline-none'>
 {showPassword ? <LuEyeClosed/> : <FiEye/>}
@@ -88,7 +86,7 @@ const handleToglePassword =()=>{
   <span className="flex-1 border-t border-gray-300"></span>
 </div>
 
-<Link href='/Sidebar' className='w-full text-center text-lg font-medium border border-2 border-gray-300 p-3 rounded-lg'>Continue as Guest</Link>
+<Link href='/' className='w-full text-center text-lg font-medium border border-2 border-gray-300 p-3 rounded-lg'>Continue as Guest</Link>
 
 </form>
 
