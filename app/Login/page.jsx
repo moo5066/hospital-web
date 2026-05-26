@@ -70,7 +70,7 @@ const handleToglePassword =()=>{
 
 
 <div className='mt-10 mx-auto w-full'>
-  <button className='bg-blue-600 p-3 text-lg font-bold w-full text-white rounded-lg'>Sign In</button>
+  <Link href='/dashboard' className='bg-blue-600 p-3 text-xl font-bold w-full text-white rounded-lg block text-center'>Sign In</Link>
 </div>
 
 
@@ -86,7 +86,7 @@ const handleToglePassword =()=>{
   <span className="flex-1 border-t border-gray-300"></span>
 </div>
 
-<Link href='/' className='w-full text-center text-lg font-medium border border-2 border-gray-300 p-3 rounded-lg'>Continue as Guest</Link>
+<Link href='/dashboard' className='w-full text-center text-lg font-medium  border-2 border-gray-300 p-3 rounded-lg'>Continue as Guest</Link>
 
 </form>
 

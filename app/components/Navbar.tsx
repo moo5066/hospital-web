@@ -17,9 +17,14 @@ const Header = () => {
       </div>
     </div>
 
-<Link href='/login'>
-  <h1 className='bg-blue-600 p-2 lg:p-3 text-white font-semibold lg:font-bold rounded-lg'>Login</h1>
-</Link>
+<div className='flex gap-3'>
+  <div className='flex flex-col'>
+  <h1 className='text-md'>Dr.Sarah Johson</h1>
+  <p className='text-gray-400 text-sm'>Administrator</p>
+  </div>
+  <IoPersonCircleOutline size={40} className='text-blue-600 bg-blue-300 p-2 rounded-full'/>
+
+</div>
 </div>
 </div>
     </div>

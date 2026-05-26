@@ -12,7 +12,6 @@ import { TbEmergencyBed } from "react-icons/tb";
 import { useState } from 'react';
 import Link from 'next/link';
 import { IoMdMenu } from "react-icons/io";
-import { useState } from 'react';
 import { CiMenuBurger } from "react-icons/ci";
 
 
@@ -23,18 +22,18 @@ const Sidebar = () => {
 
 
 
-function handleOpen() {
+// function handleOpen() {
 
-    setIsOpen(!isOpen)
-}
+//     setIsOpen(!isOpen)
+// }
 
 
 
-function handleLogin(){
-  alert("Also Coming Soon")
-}
+// function handleLogin(){
+//   alert("Also Coming Soon")
+// }
 
-const [active, setActive] = useState("")
+// const [active, setActive] = useState("")
 
 // const [open, setOpen] = useState(false)
 
@@ -72,37 +71,33 @@ const list=[
 
   return (
 
-   <div>
+ <div className={` border-r border-gray-300 h-screen p-5 bg-white ${isOpen?"w-64":"w-20"}`}>
+    
 
-<div className='flex flex-col space-y-5'> 
-<div className='flex items-center gap-2 cursor-pointer' onClick={handleOpen}>
-  <CiMenuBurger size={25}/>
-  <span className='text-lg font-bold'>MediCare</span>
+<div className='flex flex-col '>
+<div className='flex justify-between gap-2 items-center mb-5'>
+{isOpen&&<h1 className='text-lg font-bold text-blue-600 hover:text-blue-800'>Hospital Dashboard</h1>}
+<CiMenuBurger size={20} onClick={()=>setIsOpen(!isOpen)} className='cursor-pointer mx-auto'/>
+
 </div>
+<hr className='-mx-5 text-gray-300 mt-3' />
 
-<div className='flex flex-col gap-5 mt-10'>
-    {
-        list.map((item,index)=>(
-            <div key={index} className={`flex items-center gap-3 text-md font-medium cursor-pointer ${active===item.name && "text-blue-600"}`} onClick={()=>setActive(item.name)}>
-                <span>{item.icon}</span>
-                <span>{item.name}</span>
-            </div>
-        ))
-    }
-</div>
-
-<div className='mt-auto'>
-    <button onClick={handleLogin} className='bg-blue-600 w-full p-3 text-white rounded-lg'>Login</button>
 </div>
 
 <div>
-
+    <div className='flex flex-col gap-5 mt-5'>
+        {list.map((item,index)=>(
+            <Link href={`/${item.name.toLocaleLowerCase()}`} key={index} className={`flex items-center gap-2 p-3 rounded-lg text-gray-700 hover:bg-blue-300 ${isOpen?"justify-start bg-blue-600 text-white gap-5 hover:bg-blue-800":"justify-center text-gray-700 hover:bg-blue-300"}`}>
+                <span className={`text-2xl ${isOpen?"text-white":"text-blue-600"}`}>{item.icon}</span>
+                {isOpen&&<span className='text-lg font-bold '>{item.name}</span>}
+            </Link>
+        ))}
+    </div>
 </div>
-    
-</div>
 
 
-   </div>
+
+ </div>
   )
 }
 
