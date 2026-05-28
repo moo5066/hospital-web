@@ -86,7 +86,7 @@ const handleToglePassword =()=>{
   <span className="flex-1 border-t border-gray-300"></span>
 </div>
 
-<Link href='/dashboard' className='w-full text-center text-lg font-medium  border-2 border-gray-300 p-3 rounded-lg'>Continue as Guest</Link>
+<Link href='/' className='w-full text-center text-lg font-medium  border-2 border-gray-300 p-3 rounded-lg'>Continue as Guest</Link>
 
 </form>
 

@@ -1,18 +1,14 @@
-import  Sidebar  from "../components/Sidebar";
-// import Header from "../components/Header"; 
-import Navbar from "../components/Navbar";
+import React from 'react'
 import { BsPeopleFill } from "react-icons/bs";
 import { FaRegCalendar } from "react-icons/fa6";
 import { IoPersonCircleOutline } from "react-icons/io5";
 import { IoIosTrendingUp } from "react-icons/io";
-import { IoMdStopwatch } from "react-icons/io";
-import { title } from "process";
 
+const page = () => {
 
-export default function Layout( { children }: { children: React.ReactNode }) { 
+  const tableHeader=['Patient','Doctor','Time','Department','Status']
 
-
-const cards =[
+    const cards =[
   {
     title: "Total Patients",
     value: "1,234",
@@ -48,21 +44,13 @@ const cards =[
 
 const appointments =[
 
-{
-  title:"Today's Appointments"
-},
 
-{
-  listP:'Patient ',
-  listD:'Doctor ',
-  listT:'Time',
-  listS:'Status'
-},
+
+
 
   {
     patientName: "John Doe",
     doctorName: "Dr. Smith",
-        icon: <IoMdStopwatch/>,
     time: "09:00 AM",
     department:"Cardiology",
     status: "Confirmed"
@@ -70,7 +58,6 @@ const appointments =[
   {
     patientName: "Maria Garcia",
     doctorName: "Dr. Michael Brown",
-        icon: <IoMdStopwatch/>,
     time: "10:30 AM",
     department:"Pediatrics",
     status: "Confirmed"
@@ -78,7 +65,6 @@ const appointments =[
   {
     patientName: "John Doe",
     doctorName: "Dr. Sarah Lee",
-     icon: <IoMdStopwatch/>,
     time: "11:00  AM",
        department:"Orthopedics",
     status: "Waiting"
@@ -86,7 +72,6 @@ const appointments =[
   {
     patientName: "John Doe",
     doctorName: "Dr. David Park",
-    icon: <IoMdStopwatch/>,
     time: "02:00 AM",
     department:"Neurology",
     status: "In Progress"
@@ -96,23 +81,9 @@ const appointments =[
 
 
 
-
-
-
-
-  return ( 
-    <div className="min-h-screen bg-gray-100  "> 
-      <div>
-      <Navbar /> 
-      {children}
-</div>
-<div className="flex">
-<div>
-  <Sidebar/>
-  {children}
-</div>
-
-<div className="m-10">
+  return (
+    <div>
+      <div className="m-10">
    
 <div>
   <h1 className="text-2xl font-bold">Dashboard</h1>
@@ -121,7 +92,7 @@ const appointments =[
 
 
 <div className="mt-15">
- <div className="flex flex-col gap-5 md:grid md:grid-cols-2 md:gap-10 lg:flex lg:flex-row  mx-auto  w-full">
+ <div className="flex flex-col gap-5 md:grid md:grid-cols-2 md:gap-5 lg:flex lg:flex-row  mx-auto  w-full">
   { cards.map((card,index)=>(
     <div key={index} className="bg-white p-4 rounded-lg shadow-md flex flex-col md:w-70 h-45 ">
       <div className="flex justify-between  items-center"> 
@@ -145,16 +116,29 @@ const appointments =[
 </div>
 
 
+
+
 <div>
-  <div className="bg-white lg:p-5  p-2 rounded-md mt-10 w-70 lg:w-full ">
-    <h1 className="lg:text-xl sm:text-md md:text-lg text-sm font-bold  mb-5">{appointments[0].title}</h1>
-<div className="flex justify-between items-center">
-{appointments.slice(1).map((mo,index)=>(
-  <div key={index} className="flex justify-between gap-5 items-center ">
-    <h1 className="text-gray-500 lg:text-lg md:text-md text-xs">{mo.listP}</h1>
-    <h1 className="text-gray-500 lg:text-lg md:text-md text-xs">{mo.listD}</h1>
-    <h1 className="text-gray-500 lg:text-lg md:text-md text-xs">{mo.listT}</h1>
-    <h1 className="text-gray-500 lg:text-lg md:text-md text-xs">{mo.listS}</h1>
+  <div className='bg-white rounded-lg p-5 mt-10'>
+
+<h1 className='text-xl font-bold mb-5'>Today's Appointments</h1>
+
+<div className='flex justify-between  items-center p-3 bg-gray-100 rounded-lg mb-2'>
+{tableHeader.map((header,index)=>(
+  <h1 key={index} className='text-gray-500 font-bold text-sm sm:w-1/5'>{header}</h1>
+))}
+</div>
+
+<div>
+{appointments.map((map,index)=>(
+  <div key={index} className='flex justify-between items-center p-3 border-b border-gray-100'>
+<h1 className='text-gray-700 text-sm w-1/5'>{map.patientName}</h1>
+<h1 className='text-gray-700 text-sm w-1/5'>{map.doctorName}</h1>
+<h1 className='text-gray-700 text-sm w-1/5'>{map.time}</h1>
+<h1 className='text-gray-700 text-sm w-1/5'>{map.department}</h1>
+<h1 className={`text-sm font-bold w-1/5 ${map.status ==="Confirmed" ? "text-green-500" : map.status==="Waiting" ? "text-yellow-500" : "text-blue-500"}`}>
+  {map.status}
+</h1>
   </div>
 ))}
 </div>
@@ -163,18 +147,9 @@ const appointments =[
   </div>
 </div>
 
-
-
 </div>
-
-
-
-
-
-
-
-</div>
-
-    </div> 
-  );
+    </div>
+  )
 }
+
+export default page

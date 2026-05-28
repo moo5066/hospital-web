@@ -2,7 +2,6 @@
 
 
 import React from 'react'
-import Image  from 'next/image'
 import { MdDashboard } from "react-icons/md";
 import { FaPeopleRoof } from "react-icons/fa6";
 import { SiGooglemeet } from "react-icons/si";
@@ -11,59 +10,51 @@ import { FaBuilding } from "react-icons/fa";
 import { TbEmergencyBed } from "react-icons/tb";
 import { useState } from 'react';
 import Link from 'next/link';
-import { IoMdMenu } from "react-icons/io";
 import { CiMenuBurger } from "react-icons/ci";
+import { usePathname } from 'next/navigation';
 
 
 
 const Sidebar = () => {
 
   const [isOpen,setIsOpen]=useState(false)
+  const pathname=usePathname()
 
 
 
-// function handleOpen() {
-
-//     setIsOpen(!isOpen)
-// }
-
-
-
-// function handleLogin(){
-//   alert("Also Coming Soon")
-// }
-
-// const [active, setActive] = useState("")
-
-// const [open, setOpen] = useState(false)
 
 
 const list=[
     {
         icon:<MdDashboard/>,
         name:"Dashboard",
+        href:"/dashboard"
     },
     {
         icon:<FaPeopleRoof/>,
         name:"Patients",
-
+        href:"/dashboard/patients"
     },
     {
         icon:<SiGooglemeet/>,
-        name:"Appointments"
+        name:"Appointments",
+        href:"/dashboard/appointments"
     },
     {
         icon:<FaUserDoctor/>,
-        name:"Doctors"
+        name:"Doctors",
+        href:"/dashboard/doctors"
     },
     {
 
         icon:<FaBuilding/>,
-        name:"Deparments"
+        name:"Departments",
+        href:"/dashboard/departments"
     },
     {
         icon:<TbEmergencyBed/>,
-        name:"Emergency"
+        name:"Emergency",
+        href:"/dashboard/emergency"
     }
 ]
 
@@ -87,14 +78,15 @@ const list=[
 <div>
     <div className='flex flex-col gap-5 mt-5'>
         {list.map((item,index)=>(
-            <Link href={`/${item.name.toLocaleLowerCase()}`} key={index} className={`flex items-center gap-2 p-3 rounded-lg text-gray-700 hover:bg-blue-300 ${isOpen?"justify-start bg-blue-600 text-white gap-5 hover:bg-blue-800":"justify-center text-gray-700 hover:bg-blue-300"}`}>
-                <span className={`text-2xl ${isOpen?"text-white":"text-blue-600"}`}>{item.icon}</span>
+            <Link href={item.href} key={index} className={`flex items-center gap-2 p-3 rounded-lg text-gray-700 hover:bg-blue-300 
+                ${pathname==item.href ? "bg-blue-600 text-white" : "text-gray-700 hover:bg-blue-300"}
+            ${isOpen?"justify-start":"justify-center"}`}>
+                <span className={`text-2xl ${isOpen?"text-white":""}`}>{item.icon}</span>
                 {isOpen&&<span className='text-lg font-bold '>{item.name}</span>}
             </Link>
         ))}
     </div>
 </div>
-
 
 
  </div>
