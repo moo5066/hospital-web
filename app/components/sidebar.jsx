@@ -62,7 +62,7 @@ const list=[
 
   return (
 
- <div className={` border-r border-gray-300 h-screen p-5 bg-white ${isOpen?"w-64":"w-20"}`}>
+ <div className={` border-r border-gray-300 h-full p-5 bg-white ${isOpen?"w-64":"w-20"}`}>
     
 
 <div className='flex flex-col '>
